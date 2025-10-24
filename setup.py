@@ -2,22 +2,23 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="pygnition",
-    version="1.0.1",
+    name="hw",
+    version="1.2.0",
     packages=find_packages(),
     include_package_data=True,  # include non-Python files listed in MANIFEST.in
     install_requires=[
-        "beautifulsoup4",
-        "pycairo",
+        # "beautifulsoup4",
+        # "pycairo",
         # "PyGObject",
-        "markdown",
-        "regex"
+        # "markdown",
+        # "regex"
+        'pygnition'
     ],
-    python_requires=">=3.8",
+    python_requires=">=3.12",
     entry_points={
         # Optional: if you have a CLI script
         "console_scripts": [
-            # "pygnition.cli = pygnition.scripts.main:main"
+            "hw.cli = hw.main:main"
         ]
     },
 )

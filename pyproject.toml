@@ -6,14 +6,14 @@ build-backend = "setuptools.build_meta"
 name = "hw"
 version = "1.2.0"
 description = "Example hello-world package for Pygnition documentation."
-authors = [{ name = "Fuzzy Klein" }]
+authors = [{ name = "Russell Klein" }]
 requires-python = ">=3.12"
 
 [tool.setuptools]
 include-package-data = true
 
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["src"]
 include = ["hw*"]
 # exclude = ["etc*", "data*"]
 

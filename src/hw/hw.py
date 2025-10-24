@@ -1,14 +1,29 @@
 #!/usr/bin/env python3
 
-"""
-@file hw.py
-@version 0.0.1b
-@brief Defines the class that runs the module as a program.
+from .startmeup import *
 
+from pathlib import Path
 
-For more information, see:
+MODULE_NAME = Path(__file__).stem
 
-    https://github.com/fuzzyklein2/workshop-0.0.1b
+__doc__ = f"""A concise summary of what this module does.
+
+:module: {PROJECT_NAME}.{MODULE_NAME}
+:version: {VERSION}
+:author: {AUTHOR}
+:date: {LAST_SAVED_DATE}
+
+## Description
+
+Instantiates a Workshop object and calls its `run` function.
+
+## Typical Use
+
+## Notes
+
+You can include implementation notes, dependencies, or version-specific
+details here.
+
 """
 
 from pygnition.picts import *

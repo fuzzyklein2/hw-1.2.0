@@ -2,9 +2,9 @@
 
 # from pygnition._initools import AUTHOR, DESCRIPTION, last_saved_datetime, PKG_NAME, REQUIREMENTS
 
-# from ._metadata import *
+from pygnition import *
 
-from pygnition.__init__ import *
+# from pygnition.startmeup import *
 
 __doc__ = f"""The 🛠️  {PACKAGE_NAME} 🛠️  program is a test run for the 🔥  pygnition 🔥  project.
 
