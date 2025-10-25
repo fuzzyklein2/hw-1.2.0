@@ -1,21 +1,55 @@
+# pyproject.toml
+# ===============================================
+# Modern setuptools-based project template
+# -----------------------------------------------
+# Replace fields marked with "CHANGE ME" before use
+# ===============================================
+
 [build-system]
-requires = ["setuptools>=61"]
+requires = ["setuptools>=75", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "hw"
-version = "1.2.0"
-description = "Example hello-world package for Pygnition documentation."
-authors = [{ name = "Russell Klein" }]
-requires-python = ">=3.12"
+# name = "myproject"               # CHANGE ME
+dynamic = ["name", "version", "description"]
+# description = "Short description of your project."   # CHANGE ME
+authors = [{ name = "Your Name", email = "you@example.com" }]  # CHANGE ME
+license = { text = "MIT" }       # CHANGE ME if needed
+requires-python = ">=3.9"
+dependencies = []                # runtime dependencies, e.g. ["requests"]
 
-[tool.setuptools]
-include-package-data = true
+# Optional dependencies: install with `pip install .[dev]`
+[project.optional-dependencies]
+dev = ["pytest", "black", "build", "twine"]
+docs = ["sphinx", "furo"]
 
+# Entry point: installs a CLI script "pc"
+[project.scripts]
+pc = "myproject.cli:main"        # CHANGE ME
+
+# Optional URLs that show up on PyPI
+[project.urls]
+Homepage = "https://github.com/you/myproject"        # CHANGE ME
+Documentation = "https://you.github.io/myproject"    # CHANGE ME
+Source = "https://github.com/you/myproject"
+Issues = "https://github.com/you/myproject/issues"
+
+# Use setuptools' dynamic fields to load data automatically
+[tool.setuptools.dynamic]
+name = { attr = "myproject.PROJECT_NAME" }
+version = { attr = "myproject.VERSION" }
+description = { attr = "myproject.DESCRIPTION" }
+
+# Package discovery: auto-find under src/
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["hw*"]
-# exclude = ["etc*", "data*"]
+exclude = ["tests*"]
 
+# Include additional non-code files in the wheel
 [tool.setuptools.package-data]
-"hw" = ["../data/**/*"]
+myproject = ["py.typed", "data/*.json", "templates/*.html"]
+
+# Optional: include all files tracked by git
+# (requires setuptools >= 64)
+[tool.setuptools]
+include-package-data = true
