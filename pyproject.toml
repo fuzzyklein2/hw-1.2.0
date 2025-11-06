@@ -20,8 +20,8 @@ dependencies = []                # runtime dependencies, e.g. ["requests"]
 
 # Optional dependencies: install with `pip install .[dev]`
 [project.optional-dependencies]
-dev = ["pytest", "black", "build", "twine"]
-docs = ["sphinx", "furo"]
+dev = ["pytest"]
+docs = ["sphinx"]
 
 # Entry point: installs a CLI script "pc"
 [project.scripts]
@@ -36,7 +36,7 @@ Issues = "https://github.com/you/myproject/issues"
 
 # Use setuptools' dynamic fields to load data automatically
 [tool.setuptools.dynamic]
-name = { attr = "myproject.PROJECT_NAME" }
+name = { attr = "myproject.PACKAGE_NAME" }
 version = { attr = "myproject.VERSION" }
 description = { attr = "myproject.DESCRIPTION" }
 

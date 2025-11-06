@@ -23,7 +23,7 @@ Stay tuned for updates.
 
 ## Usage
 
-`$ python -m {PROJECT_NAME} [OPTIONS] [ARGUMENTS]`
+`$ python -m {PACKAGE_NAME} [OPTIONS] [ARGUMENTS]`
 
 ## System Requirements
 
@@ -31,4 +31,6 @@ Stay tuned for updates.
 
 This file may re-export selected symbols from submodules for convenience.
 Check the package [reference documentation](docs/markdown/index.md) for details.
+
+## [GitHub]
 """
