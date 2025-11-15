@@ -26,6 +26,7 @@ details here.
 
 """
 
+from pygnition.constants import SPACE
 from pygnition.picts import *
 from pygnition.program import Program
 from pygnition.lumberjack import info, warn
@@ -40,7 +41,8 @@ class HW(Program):
 
     def run(self):
         super().run()
-        print(f'Hello, {GLOBE_AMERICA_PICT.strip()} !')
+        # print(f'Input: {self.input}')
+        print(f'Hello, {(GLOBE_AMERICA_PICT.strip() + SPACE) if not self.input else self.input.strip()}!')
 
 def main():
     p = HW()
