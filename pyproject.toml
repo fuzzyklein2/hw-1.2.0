@@ -1,55 +1,24 @@
-# pyproject.toml
-# ===============================================
-# Modern setuptools-based project template
-# -----------------------------------------------
-# Replace fields marked with "CHANGE ME" before use
-# ===============================================
-
 [build-system]
-requires = ["setuptools>=75", "wheel"]
+requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-# name = "myproject"               # CHANGE ME
-dynamic = ["name", "version", "description"]
-# description = "Short description of your project."   # CHANGE ME
-authors = [{ name = "Your Name", email = "you@example.com" }]  # CHANGE ME
-license = { text = "MIT" }       # CHANGE ME if needed
-requires-python = ">=3.9"
-dependencies = []                # runtime dependencies, e.g. ["requests"]
+name = "hw"
+version = "1.2.0c"
+description = "Greet the world.."
+authors = [{ name = "Russell Klein" }]
+requires-python = ">=3.12"
 
-# Optional dependencies: install with `pip install .[dev]`
-[project.optional-dependencies]
-dev = ["pytest"]
-docs = ["sphinx"]
-
-# Entry point: installs a CLI script "pc"
-[project.scripts]
-pc = "myproject.cli:main"        # CHANGE ME
-
-# Optional URLs that show up on PyPI
-[project.urls]
-Homepage = "https://github.com/you/myproject"        # CHANGE ME
-Documentation = "https://you.github.io/myproject"    # CHANGE ME
-Source = "https://github.com/you/myproject"
-Issues = "https://github.com/you/myproject/issues"
-
-# Use setuptools' dynamic fields to load data automatically
-[tool.setuptools.dynamic]
-name = { attr = "myproject.PACKAGE_NAME" }
-version = { attr = "myproject.VERSION" }
-description = { attr = "myproject.DESCRIPTION" }
-
-# Package discovery: auto-find under src/
-[tool.setuptools.packages.find]
-where = ["src"]
-exclude = ["tests*"]
-
-# Include additional non-code files in the wheel
-[tool.setuptools.package-data]
-myproject = ["py.typed", "data/*.json", "templates/*.html"]
-
-# Optional: include all files tracked by git
-# (requires setuptools >= 64)
 [tool.setuptools]
 include-package-data = true
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["hw*"]
+# exclude = ["etc*", "data*"]
+
+[tool.setuptools.package-data]
+hw = ["data/**/*"]
